@@ -40,7 +40,7 @@ const hitos = [
 export default function Trayectoria() {
   return (
     <section
-      className="py-20 sm:py-24 md:py-32 bg-surface relative paper-texture"
+      className="py-20 sm:py-24 md:py-32 bg-surface relative lazy-section"
       id="trayectoria"
     >
       <div className="container mx-auto px-5 sm:px-8">

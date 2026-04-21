@@ -3,7 +3,7 @@ import { whatsappLink } from './WhatsAppButton.jsx'
 export default function Contacto() {
   return (
     <section
-      className="py-20 sm:py-24 md:py-32 bg-surface-container-low paper-texture"
+      className="py-20 sm:py-24 md:py-32 bg-surface-container-low lazy-section"
       id="contacto"
     >
       <div className="container mx-auto px-5 sm:px-8">
@@ -105,7 +105,6 @@ export default function Contacto() {
           </div>
 
           <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-br from-primary-container/30 to-tertiary/15 blur-3xl -z-0" />
 
             <div className="relative bg-gradient-to-br from-surface-container-high to-surface-container-highest border border-outline-variant/40 rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl">
               <div className="absolute -top-4 left-8 bg-[#25D366] text-white px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase font-headline shadow-lg">

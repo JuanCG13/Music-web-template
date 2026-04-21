@@ -13,10 +13,6 @@
     font-family: 'Manrope', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image:
-      radial-gradient(ellipse at top left, rgba(139, 94, 60, 0.15), transparent 60%),
-      radial-gradient(ellipse at bottom right, rgba(201, 97, 30, 0.08), transparent 55%);
-    background-attachment: fixed;
   }
 
   h1,
@@ -30,6 +26,11 @@
   ::selection {
     background-color: #8b5e3c;
     color: #fdf3e0;
+  }
+
+  img,
+  svg {
+    display: block;
   }
 }
 
@@ -57,24 +58,8 @@
   }
 
   .glass-warm {
-    background-color: rgba(26, 19, 13, 0.72);
-    backdrop-filter: blur(18px) saturate(1.1);
-    -webkit-backdrop-filter: blur(18px) saturate(1.1);
-    border-bottom: 1px solid rgba(138, 117, 96, 0.12);
-  }
-
-  .paper-texture {
-    position: relative;
-  }
-
-  .paper-texture::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.55 0 0 0 0 0.4 0 0 0 0 0.25 0 0 0 0.35 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/></svg>");
-    opacity: 0.35;
-    mix-blend-mode: overlay;
+    background-color: rgba(22, 16, 11, 0.94);
+    border-bottom: 1px solid rgba(138, 117, 96, 0.14);
   }
 
   .divider-flourish {
@@ -100,5 +85,10 @@
   .italic-serif {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-style: italic;
+  }
+
+  .lazy-section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 900px;
   }
 }

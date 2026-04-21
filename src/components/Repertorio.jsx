@@ -64,7 +64,7 @@ const actividades = [
 
 export default function Repertorio() {
   return (
-    <section className="py-20 sm:py-24 md:py-32 bg-surface paper-texture" id="repertorio">
+    <section className="py-20 sm:py-24 md:py-32 bg-surface lazy-section" id="repertorio">
       <div className="container mx-auto px-5 sm:px-8">
         <div className="max-w-2xl mb-12 sm:mb-16 md:mb-20">
           <span className="italic-serif text-primary tracking-widest uppercase text-xs sm:text-sm mb-3 sm:mb-4 block">
@@ -89,14 +89,13 @@ export default function Repertorio() {
               href={pieza.youtube}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative overflow-hidden rounded-xl border border-outline-variant/30 bg-surface-container-low hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 flex flex-col focus:outline-none focus:ring-2 focus:ring-primary/60"
+              className="group relative overflow-hidden rounded-xl border border-outline-variant/30 bg-surface-container-low hover:border-primary/50 hover:-translate-y-1 transition-[transform,border-color] duration-300 flex flex-col focus:outline-none focus:ring-2 focus:ring-primary/60"
               aria-label={`Escuchar ${pieza.titulo} en YouTube`}
             >
               <div
                 className={`h-48 sm:h-56 md:h-64 bg-gradient-to-br ${pieza.tono} relative flex items-end p-5 sm:p-6 md:p-8`}
               >
-                <div className="absolute inset-0 bg-wood-grain opacity-40" />
-                <div className="absolute top-4 right-4 sm:top-5 sm:right-5 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-black/35 backdrop-blur-sm flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all">
+                <div className="absolute top-4 right-4 sm:top-5 sm:right-5 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-black/45 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-[transform,background-color]">
                   <span className="material-symbols-outlined filled text-parchment group-hover:text-on-primary text-2xl sm:text-3xl">
                     play_arrow
                   </span>
@@ -143,11 +142,11 @@ export default function Repertorio() {
           {actividades.map((act, i) => (
             <div
               key={act.titulo}
-              className={`bg-surface-container-low border border-outline-variant/30 p-6 sm:p-8 md:p-10 rounded-xl hover:bg-surface-container hover:border-primary/30 transition-all group ${
+              className={`bg-surface-container-low border border-outline-variant/30 p-6 sm:p-8 md:p-10 rounded-xl hover:bg-surface-container hover:border-primary/30 transition-colors group ${
                 i === 2 ? 'sm:col-span-2 lg:col-span-1' : ''
               }`}
             >
-              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 border border-primary/40 text-primary rounded-full flex items-center justify-center mb-5 sm:mb-6 md:mb-8 group-hover:bg-primary group-hover:text-on-primary transition-all">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 border border-primary/40 text-primary rounded-full flex items-center justify-center mb-5 sm:mb-6 md:mb-8 group-hover:bg-primary group-hover:text-on-primary transition-colors">
                 <span className="material-symbols-outlined text-xl sm:text-2xl md:text-3xl">
                   {act.icon}
                 </span>

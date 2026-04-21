@@ -19,7 +19,6 @@ export default function WhatsAppButton() {
         Escribime por WhatsApp
       </span>
       <span className="relative flex items-center justify-center">
-        <span className="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-40 animate-ping" />
         <span className="relative inline-flex w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] hover:bg-[#1ebe5a] text-white items-center justify-center shadow-xl shadow-black/40 transition-transform group-hover:scale-110">
           <svg
             viewBox="0 0 24 24"

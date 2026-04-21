@@ -1,13 +1,13 @@
 export default function Mangore() {
   return (
     <section
-      className="py-20 sm:py-24 md:py-32 bg-surface-container-lowest relative overflow-hidden paper-texture"
+      className="py-20 sm:py-24 md:py-32 bg-surface-container-lowest relative overflow-hidden lazy-section"
       id="mangore"
     >
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(139,94,60,0.25),transparent_55%)]" />
-        <div className="absolute inset-0 bg-wood-grain opacity-30" />
-      </div>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_30%,rgba(139,94,60,0.22),transparent_58%)]"
+      />
 
       <div className="container mx-auto px-5 sm:px-8 relative">
         <div className="max-w-4xl mx-auto text-center">

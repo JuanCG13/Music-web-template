@@ -1,11 +1,10 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-[92vh] lg:min-h-screen flex items-center pt-28 sm:pt-32 pb-20 overflow-hidden paper-texture">
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_30%,rgba(139,94,60,0.38),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_85%,rgba(201,97,30,0.22),transparent_55%)]" />
-        <div className="absolute inset-0 bg-wood-grain opacity-40" />
-      </div>
+    <section className="relative min-h-[88vh] lg:min-h-screen flex items-center pt-28 sm:pt-32 pb-20 overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_25%_35%,rgba(139,94,60,0.32),transparent_60%),radial-gradient(ellipse_at_80%_85%,rgba(201,97,30,0.16),transparent_55%)]"
+      />
 
       <div className="container mx-auto px-6 sm:px-8 relative z-10">
         <div className="max-w-5xl mx-auto lg:mx-0">

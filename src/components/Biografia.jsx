@@ -1,12 +1,9 @@
 export default function Biografia() {
   return (
-    <section className="py-20 sm:py-24 md:py-32 bg-surface-container-low paper-texture" id="biografia">
+    <section className="py-20 sm:py-24 md:py-32 bg-surface-container-low lazy-section" id="biografia">
       <div className="container mx-auto px-5 sm:px-8 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-24 items-center">
           <div className="order-2 lg:order-1 relative">
-            <div className="absolute -top-6 -left-6 sm:-top-8 sm:-left-8 w-40 sm:w-48 h-40 sm:h-48 bg-primary-container/30 blur-3xl -z-0" />
-            <div className="absolute -bottom-8 -right-6 sm:-bottom-12 sm:-right-8 w-52 sm:w-64 h-52 sm:h-64 bg-tertiary/15 blur-3xl -z-0" />
-
             <div className="relative z-10 bg-gradient-to-br from-surface-container-high to-surface-container-highest p-6 sm:p-8 md:p-10 rounded-xl border border-outline-variant/40 shadow-2xl">
               <div className="flex items-start gap-3 sm:gap-4 mb-6 sm:mb-8">
                 <span className="material-symbols-outlined text-primary text-2xl sm:text-3xl mt-1 flex-shrink-0">

@@ -84,7 +84,7 @@ export default function Navbar() {
           open ? 'max-h-[28rem] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="px-6 pb-6 pt-2 flex flex-col gap-3 bg-surface-container-low/95 backdrop-blur-xl border-t border-outline-variant/30">
+        <div className="px-6 pb-6 pt-2 flex flex-col gap-3 bg-surface-container-low border-t border-outline-variant/30">
           {links.map((link) => (
             <a
               key={link.href}
