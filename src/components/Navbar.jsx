@@ -26,16 +26,17 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full z-50 glass-warm">
-      <div className="flex justify-between items-center px-6 sm:px-8 py-4 max-w-screen-2xl mx-auto">
+      <div className="flex justify-between items-center px-5 sm:px-8 py-3 sm:py-4 max-w-screen-2xl mx-auto gap-3">
         <a
-          className="flex items-baseline gap-2 font-headline"
+          className="flex items-baseline gap-2 font-headline min-w-0"
           href="#"
           onClick={() => handleClick('#')}
         >
-          <span className="text-xl sm:text-2xl font-semibold tracking-tight text-parchment">
-            María Paz Cubells
+          <span className="text-lg sm:text-xl md:text-2xl font-semibold tracking-tight text-parchment truncate">
+            <span className="sm:hidden">M. P. Cubells</span>
+            <span className="hidden sm:inline">María Paz Cubells</span>
           </span>
-          <span className="hidden sm:inline italic-serif text-primary text-sm">
+          <span className="hidden md:inline italic-serif text-primary text-sm">
             · guitarra
           </span>
         </a>
@@ -60,7 +61,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="#contacto"
-            className="hidden sm:inline-flex items-center gap-2 border border-primary/40 text-primary hover:bg-primary hover:text-on-primary px-5 md:px-6 py-2 rounded-full font-medium transition-colors duration-200"
+            className="hidden lg:inline-flex items-center gap-2 border border-primary/40 text-primary hover:bg-primary hover:text-on-primary px-5 md:px-6 py-2 rounded-full font-medium transition-colors duration-200 text-sm"
           >
             Reservar concierto
           </a>
@@ -101,7 +102,7 @@ export default function Navbar() {
           <a
             href="#contacto"
             onClick={() => setOpen(false)}
-            className="sm:hidden mt-2 border border-primary/40 text-primary px-6 py-3 rounded-full font-medium text-center"
+            className="lg:hidden mt-2 border border-primary/40 text-primary px-6 py-3 rounded-full font-medium text-center"
           >
             Reservar concierto
           </a>

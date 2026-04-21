@@ -3,22 +3,22 @@ import { whatsappLink } from './WhatsAppButton.jsx'
 export default function Contacto() {
   return (
     <section
-      className="py-24 md:py-32 bg-surface-container-low paper-texture"
+      className="py-20 sm:py-24 md:py-32 bg-surface-container-low paper-texture"
       id="contacto"
     >
-      <div className="container mx-auto px-6 sm:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      <div className="container mx-auto px-5 sm:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-center">
           <div>
-            <span className="italic-serif text-primary tracking-widest uppercase text-xs sm:text-sm mb-4 block">
+            <span className="italic-serif text-primary tracking-widest uppercase text-xs sm:text-sm mb-3 sm:mb-4 block">
               — Contacto
             </span>
-            <h2 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight mb-10 text-parchment leading-tight">
+            <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-8 sm:mb-10 text-parchment leading-tight">
               Conversemos{' '}
               <span className="italic-serif text-primary font-normal">
                 sobre música
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-on-surface-variant mb-12 max-w-md font-body leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-on-surface-variant mb-10 sm:mb-12 max-w-md font-body leading-relaxed">
               Para conciertos, colaboraciones, clases, o simplemente para compartir
               una pieza que te emocione. La vía más rápida es un mensaje directo.
             </p>
@@ -107,13 +107,13 @@ export default function Contacto() {
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-br from-primary-container/30 to-tertiary/15 blur-3xl -z-0" />
 
-            <div className="relative bg-gradient-to-br from-surface-container-high to-surface-container-highest border border-outline-variant/40 rounded-2xl p-8 sm:p-10 md:p-12 shadow-2xl">
+            <div className="relative bg-gradient-to-br from-surface-container-high to-surface-container-highest border border-outline-variant/40 rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl">
               <div className="absolute -top-4 left-8 bg-[#25D366] text-white px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase font-headline shadow-lg">
                 Vía directa
               </div>
 
-              <div className="flex items-start gap-5 mb-8">
-                <div className="w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#25D366]/20">
+              <div className="flex items-start gap-4 sm:gap-5 mb-6 sm:mb-8">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#25D366]/20">
                   <svg
                     viewBox="0 0 24 24"
                     className="w-7 h-7 fill-white"
@@ -123,18 +123,18 @@ export default function Contacto() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-headline text-2xl md:text-3xl font-semibold text-parchment mb-2">
+                  <h3 className="font-headline text-xl sm:text-2xl md:text-3xl font-semibold text-parchment mb-1 sm:mb-2">
                     Escribí por WhatsApp
                   </h3>
-                  <p className="italic-serif text-primary text-base">
+                  <p className="italic-serif text-primary text-sm sm:text-base">
                     Respuesta rápida y conversación real.
                   </p>
                 </div>
               </div>
 
-              <div className="divider-flourish mb-8" />
+              <div className="divider-flourish mb-6 sm:mb-8" />
 
-              <p className="text-on-surface-variant font-body leading-relaxed mb-10 text-base md:text-lg">
+              <p className="text-on-surface-variant font-body leading-relaxed mb-8 sm:mb-10 text-sm sm:text-base md:text-lg">
                 Contame sobre tu propuesta, fecha tentativa, sala o proyecto. Si es
                 una colaboración musical, mejor con una referencia del repertorio que
                 tenés en mente.

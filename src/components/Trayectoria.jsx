@@ -39,52 +39,57 @@ const hitos = [
 
 export default function Trayectoria() {
   return (
-    <section className="py-24 md:py-32 bg-surface relative paper-texture" id="trayectoria">
-      <div className="container mx-auto px-6 sm:px-8">
-        <div className="max-w-3xl mb-16 md:mb-20">
-          <span className="italic-serif text-primary tracking-widest uppercase text-xs sm:text-sm mb-4 block">
+    <section
+      className="py-20 sm:py-24 md:py-32 bg-surface relative paper-texture"
+      id="trayectoria"
+    >
+      <div className="container mx-auto px-5 sm:px-8">
+        <div className="max-w-3xl mb-12 sm:mb-16 md:mb-20">
+          <span className="italic-serif text-primary tracking-widest uppercase text-xs sm:text-sm mb-3 sm:mb-4 block">
             — Trayectoria
           </span>
-          <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-6 text-parchment">
+          <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-5 sm:mb-6 text-parchment leading-tight">
             Una vida medida en{' '}
             <span className="italic-serif text-primary font-normal">cuerdas</span>.
           </h2>
-          <p className="text-on-surface-variant text-lg font-body">
+          <p className="text-on-surface-variant text-base sm:text-lg font-body">
             Del primer acorde en la infancia al reconocimiento regional. Los hitos que
             marcan su recorrido como intérprete.
           </p>
         </div>
 
-        <ol className="relative border-l border-outline-variant/50 pl-6 md:pl-10 space-y-10 md:space-y-14">
+        <ol className="relative border-l border-outline-variant/50 pl-10 sm:pl-12 md:pl-14 space-y-8 sm:space-y-10 md:space-y-14 ml-4 sm:ml-6">
           {hitos.map((hito) => (
             <li key={hito.year + hito.title} className="relative">
               <span
-                className={`absolute -left-[34px] md:-left-[50px] top-1 w-10 h-10 md:w-11 md:h-11 rounded-full flex items-center justify-center ${
+                className={`absolute -left-[54px] sm:-left-[62px] md:-left-[70px] top-1 w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full flex items-center justify-center ${
                   hito.highlight
                     ? 'bg-primary text-on-primary shadow-lg shadow-primary/20'
                     : 'bg-surface-container-high border border-outline-variant/60 text-primary'
                 }`}
               >
-                <span className="material-symbols-outlined text-xl">{hito.icon}</span>
+                <span className="material-symbols-outlined text-lg sm:text-xl">
+                  {hito.icon}
+                </span>
               </span>
 
               <div
-                className={`rounded-xl p-6 md:p-8 border transition-colors ${
+                className={`rounded-xl p-5 sm:p-6 md:p-8 border transition-colors ${
                   hito.highlight
                     ? 'border-primary/40 bg-gradient-to-br from-surface-container-high to-surface-container-highest'
                     : 'border-outline-variant/30 bg-surface-container-low hover:border-outline-variant/60'
                 }`}
               >
-                <div className="flex items-baseline gap-4 mb-3 flex-wrap">
-                  <span className="italic-serif text-primary text-2xl md:text-3xl">
+                <div className="flex items-baseline gap-3 sm:gap-4 mb-3 flex-wrap">
+                  <span className="italic-serif text-primary text-xl sm:text-2xl md:text-3xl">
                     {hito.year}
                   </span>
-                  <span className="h-px w-8 bg-outline-variant/60" />
-                  <h3 className="font-headline text-xl md:text-2xl font-semibold text-parchment">
+                  <span className="h-px w-6 sm:w-8 bg-outline-variant/60" />
+                  <h3 className="font-headline text-lg sm:text-xl md:text-2xl font-semibold text-parchment leading-tight">
                     {hito.title}
                   </h3>
                 </div>
-                <p className="text-on-surface-variant leading-relaxed font-body">
+                <p className="text-on-surface-variant leading-relaxed font-body text-sm sm:text-base">
                   {hito.description}
                 </p>
               </div>
