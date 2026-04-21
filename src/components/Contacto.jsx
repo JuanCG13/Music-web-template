@@ -1,31 +1,13 @@
-import { useState } from 'react'
+import { whatsappLink } from './WhatsAppButton.jsx'
 
 export default function Contacto() {
-  const [form, setForm] = useState({
-    nombre: '',
-    email: '',
-    motivo: 'Concierto',
-    mensaje: '',
-  })
-  const [enviado, setEnviado] = useState(false)
-
-  const update = (campo) => (event) =>
-    setForm((prev) => ({ ...prev, [campo]: event.target.value }))
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    setEnviado(true)
-    setTimeout(() => setEnviado(false), 3500)
-    setForm({ nombre: '', email: '', motivo: 'Concierto', mensaje: '' })
-  }
-
   return (
     <section
       className="py-24 md:py-32 bg-surface-container-low paper-texture"
       id="contacto"
     >
       <div className="container mx-auto px-6 sm:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div>
             <span className="italic-serif text-primary tracking-widest uppercase text-xs sm:text-sm mb-4 block">
               — Contacto
@@ -37,21 +19,21 @@ export default function Contacto() {
               </span>
             </h2>
             <p className="text-lg md:text-xl text-on-surface-variant mb-12 max-w-md font-body leading-relaxed">
-              Para conciertos, colaboraciones, clases, o simplemente para compartir una
-              pieza que te emocione. Escribimos respuesta a cada mensaje.
+              Para conciertos, colaboraciones, clases, o simplemente para compartir
+              una pieza que te emocione. La vía más rápida es un mensaje directo.
             </p>
 
-            <div className="space-y-6 mb-12">
+            <div className="space-y-6">
               <div className="flex items-center gap-5 group">
                 <div className="w-12 h-12 border border-outline/40 flex items-center justify-center rounded-lg group-hover:bg-primary group-hover:border-primary group-hover:text-on-primary transition-all flex-shrink-0 text-primary">
-                  <span className="material-symbols-outlined">mail</span>
+                  <span className="material-symbols-outlined">call</span>
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-widest text-on-surface-variant mb-1">
-                    Correo
+                    WhatsApp
                   </p>
-                  <span className="text-base sm:text-lg font-medium font-headline text-parchment break-all">
-                    mariapazcubells@ejemplo.com
+                  <span className="text-base sm:text-lg font-medium font-headline text-parchment">
+                    +595 976 534 549
                   </span>
                 </div>
               </div>
@@ -85,7 +67,7 @@ export default function Contacto() {
               </div>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex gap-4 mt-12">
               <a
                 aria-label="Instagram"
                 className="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center hover:bg-primary-container transition-colors group border border-outline-variant/30"
@@ -122,75 +104,65 @@ export default function Contacto() {
             </div>
           </div>
 
-          <div className="bg-surface-container-high p-6 sm:p-8 md:p-12 rounded-2xl border border-outline-variant/40 relative">
-            <div className="absolute -top-4 left-6 md:left-10 bg-primary-container text-on-primary-container px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase font-headline">
-              Escribir
-            </div>
-            <form onSubmit={handleSubmit} className="space-y-6 mt-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-widest text-on-surface-variant mb-2">
-                    Nombre
-                  </label>
-                  <input
-                    required
-                    value={form.nombre}
-                    onChange={update('nombre')}
-                    className="w-full bg-surface-container-lowest border border-outline-variant/40 focus:border-primary focus:ring-1 focus:ring-primary text-parchment px-4 py-3.5 rounded-lg outline-none transition-colors"
-                    placeholder="Tu nombre"
-                    type="text"
-                  />
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gradient-to-br from-primary-container/30 to-tertiary/15 blur-3xl -z-0" />
+
+            <div className="relative bg-gradient-to-br from-surface-container-high to-surface-container-highest border border-outline-variant/40 rounded-2xl p-8 sm:p-10 md:p-12 shadow-2xl">
+              <div className="absolute -top-4 left-8 bg-[#25D366] text-white px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase font-headline shadow-lg">
+                Vía directa
+              </div>
+
+              <div className="flex items-start gap-5 mb-8">
+                <div className="w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#25D366]/20">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="w-7 h-7 fill-white"
+                    aria-hidden="true"
+                  >
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.861 9.861 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413" />
+                  </svg>
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-widest text-on-surface-variant mb-2">
-                    Correo
-                  </label>
-                  <input
-                    required
-                    value={form.email}
-                    onChange={update('email')}
-                    className="w-full bg-surface-container-lowest border border-outline-variant/40 focus:border-primary focus:ring-1 focus:ring-primary text-parchment px-4 py-3.5 rounded-lg outline-none transition-colors"
-                    placeholder="tu@correo.com"
-                    type="email"
-                  />
+                  <h3 className="font-headline text-2xl md:text-3xl font-semibold text-parchment mb-2">
+                    Escribí por WhatsApp
+                  </h3>
+                  <p className="italic-serif text-primary text-base">
+                    Respuesta rápida y conversación real.
+                  </p>
                 </div>
               </div>
-              <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-on-surface-variant mb-2">
-                  Motivo
-                </label>
-                <select
-                  value={form.motivo}
-                  onChange={update('motivo')}
-                  className="w-full bg-surface-container-lowest border border-outline-variant/40 focus:border-primary focus:ring-1 focus:ring-primary text-parchment px-4 py-3.5 rounded-lg outline-none transition-colors"
-                >
-                  <option>Concierto</option>
-                  <option>Música de cámara</option>
-                  <option>Clases</option>
-                  <option>Entrevista / prensa</option>
-                  <option>Otro</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-on-surface-variant mb-2">
-                  Mensaje
-                </label>
-                <textarea
-                  required
-                  value={form.mensaje}
-                  onChange={update('mensaje')}
-                  className="w-full bg-surface-container-lowest border border-outline-variant/40 focus:border-primary focus:ring-1 focus:ring-primary text-parchment px-4 py-3.5 rounded-lg outline-none resize-y transition-colors"
-                  placeholder="Contame sobre tu propuesta o proyecto..."
-                  rows={4}
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-primary text-on-primary py-4 sm:py-5 rounded-full text-base sm:text-lg font-semibold hover:bg-primary-container hover:text-on-primary-container transition-colors font-headline"
+
+              <div className="divider-flourish mb-8" />
+
+              <p className="text-on-surface-variant font-body leading-relaxed mb-10 text-base md:text-lg">
+                Contame sobre tu propuesta, fecha tentativa, sala o proyecto. Si es
+                una colaboración musical, mejor con una referencia del repertorio que
+                tenés en mente.
+              </p>
+
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#1ebe5a] text-white py-4 sm:py-5 rounded-full text-base sm:text-lg font-semibold transition-colors font-headline shadow-lg shadow-[#25D366]/20"
               >
-                {enviado ? '✓ Mensaje enviado. Gracias.' : 'Enviar mensaje'}
-              </button>
-            </form>
+                <svg
+                  viewBox="0 0 24 24"
+                  className="w-6 h-6 fill-white"
+                  aria-hidden="true"
+                >
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.861 9.861 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413" />
+                </svg>
+                Abrir chat en WhatsApp
+                <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
+                  arrow_forward
+                </span>
+              </a>
+
+              <p className="text-center text-xs text-on-surface-variant mt-6 tracking-wide">
+                +595 976 534 549 · Asunción, Paraguay
+              </p>
+            </div>
           </div>
         </div>
       </div>
