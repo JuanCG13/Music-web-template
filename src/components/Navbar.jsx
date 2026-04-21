@@ -1,22 +1,19 @@
 import { useState, useEffect } from 'react'
 
 const links = [
-  { href: '#music', label: 'Music' },
-  { href: '#services', label: 'Services' },
-  { href: '#about', label: 'About' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#biografia', label: 'Biografía' },
+  { href: '#trayectoria', label: 'Trayectoria' },
+  { href: '#mangore', label: 'Mangoré' },
+  { href: '#repertorio', label: 'Repertorio' },
+  { href: '#contacto', label: 'Contacto' },
 ]
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
-  const [active, setActive] = useState('#music')
+  const [active, setActive] = useState('#biografia')
 
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
+    document.body.style.overflow = open ? 'hidden' : ''
     return () => {
       document.body.style.overflow = ''
     }
@@ -28,14 +25,19 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 w-full z-50 glass-nav">
+    <nav className="fixed top-0 w-full z-50 glass-warm">
       <div className="flex justify-between items-center px-6 sm:px-8 py-4 max-w-screen-2xl mx-auto">
         <a
-          className="text-2xl font-bold tracking-tighter text-neutral-100 font-headline"
+          className="flex items-baseline gap-2 font-headline"
           href="#"
           onClick={() => handleClick('#')}
         >
-          SonicCurator
+          <span className="text-xl sm:text-2xl font-semibold tracking-tight text-parchment">
+            María Paz Cubells
+          </span>
+          <span className="hidden sm:inline italic-serif text-primary text-sm">
+            · guitarra
+          </span>
         </a>
 
         <div className="hidden md:flex items-center space-x-8 lg:space-x-10">
@@ -46,8 +48,8 @@ export default function Navbar() {
               onClick={() => handleClick(link.href)}
               className={
                 active === link.href
-                  ? 'text-blue-500 font-bold border-b-2 border-blue-500 pb-1 font-headline tracking-tight'
-                  : 'text-neutral-400 font-medium hover:text-neutral-100 transition-colors font-headline tracking-tight'
+                  ? 'text-primary font-medium border-b border-primary pb-1 font-headline tracking-tight'
+                  : 'text-on-surface-variant font-medium hover:text-parchment transition-colors font-headline tracking-tight'
               }
             >
               {link.label}
@@ -57,17 +59,17 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#contact"
-            className="hidden sm:inline-flex bg-primary-container text-on-primary-container px-5 md:px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform duration-200"
+            href="#contacto"
+            className="hidden sm:inline-flex items-center gap-2 border border-primary/40 text-primary hover:bg-primary hover:text-on-primary px-5 md:px-6 py-2 rounded-full font-medium transition-colors duration-200"
           >
-            Book Now
+            Reservar concierto
           </a>
 
           <button
-            aria-label="Toggle menu"
+            aria-label="Abrir menú"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden w-10 h-10 flex items-center justify-center text-on-surface"
+            className="md:hidden w-10 h-10 flex items-center justify-center text-parchment"
           >
             <span className="material-symbols-outlined">
               {open ? 'close' : 'menu'}
@@ -78,10 +80,10 @@ export default function Navbar() {
 
       <div
         className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ease-out ${
-          open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          open ? 'max-h-[28rem] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="px-6 pb-6 pt-2 flex flex-col gap-4 bg-neutral-900/95 backdrop-blur-xl">
+        <div className="px-6 pb-6 pt-2 flex flex-col gap-3 bg-surface-container-low/95 backdrop-blur-xl border-t border-outline-variant/30">
           {links.map((link) => (
             <a
               key={link.href}
@@ -89,19 +91,19 @@ export default function Navbar() {
               onClick={() => handleClick(link.href)}
               className={
                 active === link.href
-                  ? 'text-blue-500 font-bold font-headline tracking-tight py-2'
-                  : 'text-neutral-300 font-medium hover:text-neutral-100 font-headline tracking-tight py-2'
+                  ? 'text-primary font-medium font-headline tracking-tight py-2'
+                  : 'text-on-surface-variant font-medium hover:text-parchment font-headline tracking-tight py-2'
               }
             >
               {link.label}
             </a>
           ))}
           <a
-            href="#contact"
+            href="#contacto"
             onClick={() => setOpen(false)}
-            className="sm:hidden bg-primary-container text-on-primary-container px-6 py-3 rounded-full font-bold text-center"
+            className="sm:hidden mt-2 border border-primary/40 text-primary px-6 py-3 rounded-full font-medium text-center"
           >
-            Book Now
+            Reservar concierto
           </a>
         </div>
       </div>

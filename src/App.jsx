@@ -1,11 +1,12 @@
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
-import FeaturedMusic from './components/FeaturedMusic.jsx'
-import About from './components/About.jsx'
-import Services from './components/Services.jsx'
-import Testimonials from './components/Testimonials.jsx'
-import Contact from './components/Contact.jsx'
+import Biografia from './components/Biografia.jsx'
+import Trayectoria from './components/Trayectoria.jsx'
+import Mangore from './components/Mangore.jsx'
+import Repertorio from './components/Repertorio.jsx'
+import Contacto from './components/Contacto.jsx'
 import Footer from './components/Footer.jsx'
+import WhatsAppButton from './components/WhatsAppButton.jsx'
 
 export default function App() {
   return (
@@ -13,13 +14,14 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <FeaturedMusic />
-        <About />
-        <Services />
-        <Testimonials />
-        <Contact />
+        <Biografia />
+        <Trayectoria />
+        <Mangore />
+        <Repertorio />
+        <Contacto />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }

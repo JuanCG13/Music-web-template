@@ -1,58 +1,57 @@
-# SonicCurator — Music Web Template
+# María Paz Cubells Gómez — Portafolio
 
-Landing page for a music producer / curator, converted from a static HTML
-mockup into a fast, responsive React + Vite + Tailwind app ready to deploy.
+Sitio web en español para **María Paz Cubells Gómez**, guitarrista clásica
+paraguaya, con una estética rústica-elegante moderna que dialoga con la
+tradición de Agustín Barrios Mangoré (San Juan Bautista de las Misiones).
 
 ## Stack
 
 - [Vite](https://vitejs.dev/) (React plugin)
 - [React 18](https://react.dev/)
-- [Tailwind CSS 3](https://tailwindcss.com/) with a custom Material 3 palette
-- Google Fonts: Space Grotesk, Manrope
-- Google Material Symbols (icons)
+- [Tailwind CSS 3](https://tailwindcss.com/) con paleta cálida custom
+- Google Fonts: **Fraunces** (serif moderno), **Cormorant Garamond** (itálicas), **Manrope** (cuerpo)
+- Material Symbols Outlined (íconos)
 
 ## Scripts
 
 ```bash
-npm install       # install dependencies
-npm run dev       # start dev server (http://localhost:5173)
-npm run build     # production build to /dist
-npm run preview   # preview the production build locally
+npm install       # instala dependencias
+npm run dev       # servidor local (http://localhost:5173)
+npm run build     # build de producción en /dist
+npm run preview   # previsualizar el build
 ```
 
-## Deployment
+## Deploy
 
-The project builds to static assets in `dist/` and can be deployed to any
-static host: Vercel, Netlify, GitHub Pages, Cloudflare Pages, etc.
+El build genera estáticos en `dist/` y corre en cualquier host estático:
+Vercel, Netlify, Cloudflare Pages, GitHub Pages, etc.
 
-### Vercel / Netlify
+`vite.config.js` usa `base: './'` para que funcione en cualquier subruta.
 
-No config needed — point the project at this repo and it'll detect Vite
-automatically (`npm run build`, output `dist`).
-
-### GitHub Pages
-
-`vite.config.js` uses `base: './'` so the build works from any path.
-
-## Structure
+## Estructura
 
 ```
 src/
-├── main.jsx                  # React entry
-├── App.jsx                   # composes all sections
-├── index.css                 # Tailwind base + tokens
+├── main.jsx
+├── App.jsx
+├── index.css                 # Tailwind base + tokens rústicos
 └── components/
-    ├── Navbar.jsx            # top nav + mobile hamburger menu
-    ├── Hero.jsx
-    ├── FeaturedMusic.jsx     # bento-style releases grid
-    ├── About.jsx
-    ├── Services.jsx
-    ├── Testimonials.jsx
-    ├── Contact.jsx           # contact form with local state
+    ├── Navbar.jsx            # navegación + menú móvil
+    ├── Hero.jsx              # presentación con ilustración SVG de guitarra
+    ├── Biografia.jsx         # vida y formación
+    ├── Trayectoria.jsx       # línea de tiempo de hitos
+    ├── Mangore.jsx           # vínculo con San Juan Bautista y Mangoré
+    ├── Repertorio.jsx        # obras y actividades
+    ├── Contacto.jsx          # formulario con estado local
     └── Footer.jsx
 ```
 
-## Responsive breakpoints
+## Paleta
 
-Built mobile-first; tested layouts across `sm` (≥640px), `md` (≥768px),
-`lg` (≥1024px). The navbar collapses into a hamburger menu under `md`.
+Madera, oro pálido, terracota, pergamino — construida sobre fondo cálido
+(`#1a130d`) con acentos de cuero y dorado antiguo.
+
+## Responsive
+
+Mobile-first. Probado en `sm` (≥640px), `md` (≥768px), `lg` (≥1024px). El
+navbar colapsa en menú hamburguesa debajo de `md`.

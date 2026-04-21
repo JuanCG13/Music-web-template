@@ -1,33 +1,39 @@
 export default function Footer() {
   return (
-    <footer className="bg-neutral-950 w-full border-t border-neutral-800/20">
-      <div className="flex flex-col md:flex-row justify-between items-center gap-6 px-6 sm:px-12 py-10 w-full max-w-screen-2xl mx-auto">
+    <footer className="bg-surface-container-lowest w-full border-t border-outline-variant/30 paper-texture">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-8 px-6 sm:px-12 py-12 w-full max-w-screen-2xl mx-auto">
         <div className="text-center md:text-left">
-          <span className="text-lg font-bold text-neutral-100 font-headline">
-            SonicCurator
+          <span className="font-headline text-xl font-semibold text-parchment">
+            María Paz Cubells Gómez
           </span>
-          <p className="text-neutral-500 text-sm mt-2 font-body tracking-wide">
-            © {new Date().getFullYear()} SonicCurator. All rights reserved.
+          <p className="italic-serif text-primary text-sm mt-1">
+            Guitarra clásica · Paraguay
+          </p>
+          <p className="text-on-surface-variant text-sm mt-3 font-body tracking-wide">
+            © {new Date().getFullYear()} Todos los derechos reservados.
           </p>
         </div>
-        <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 font-body text-sm tracking-wide">
-          <a className="text-neutral-500 hover:text-blue-400 transition-colors" href="#">
-            Privacy Policy
+
+        <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-8 font-body text-sm tracking-wide">
+          <a className="text-on-surface-variant hover:text-primary transition-colors" href="#biografia">
+            Biografía
           </a>
-          <a className="text-neutral-500 hover:text-blue-400 transition-colors" href="#">
-            Terms of Service
+          <a className="text-on-surface-variant hover:text-primary transition-colors" href="#trayectoria">
+            Trayectoria
           </a>
-          <a className="text-neutral-500 hover:text-blue-400 transition-colors" href="#">
-            Press Kit
+          <a className="text-on-surface-variant hover:text-primary transition-colors" href="#repertorio">
+            Repertorio
+          </a>
+          <a className="text-on-surface-variant hover:text-primary transition-colors" href="#contacto">
+            Contacto
           </a>
         </div>
-        <div className="flex gap-4 text-neutral-500">
-          <button aria-label="RSS feed" className="hover:text-blue-400 transition-colors">
-            <span className="material-symbols-outlined text-lg">rss_feed</span>
-          </button>
-          <button aria-label="Share" className="hover:text-blue-400 transition-colors">
-            <span className="material-symbols-outlined text-lg">share</span>
-          </button>
+
+        <div className="flex items-center gap-3 text-on-surface-variant italic-serif text-sm">
+          <span className="material-symbols-outlined text-primary text-base">
+            music_note
+          </span>
+          Desde la tierra de Mangoré
         </div>
       </div>
     </footer>
